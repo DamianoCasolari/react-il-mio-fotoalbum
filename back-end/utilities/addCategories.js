@@ -24,29 +24,6 @@ const listaCategorie = [
   },
 ];
 
-const listaTag = [
-  {
-    name: "JavaScript",
-    description: "Articles related to the JavaScript programming language.",
-  },
-  {
-    name: "React",
-    description: "Articles related to the React library.",
-  },
-  {
-    name: "Python",
-    description: "Articles related to the Python programming language.",
-  },
-  {
-    name: "UI Design",
-    description: "Articles related to user interface design principles.",
-  },
-  {
-    name: "AWS",
-    description: "Articles related to Amazon Web Services (AWS).",
-  },
-];
-
 prisma.category.createMany({
   data: listaCategorie,
   skipDuplicates: true,

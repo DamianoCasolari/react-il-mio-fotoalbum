@@ -1,61 +1,52 @@
 const { PrismaClient} = require("@prisma/client");
 const prisma = new PrismaClient()
 
-const listaPost = [
-    {
-      id: 1,
-      title: "Primo Post",
-      slug: "primo-post",
-      image: "url_dell_immagine",
-      content: "Contenuto del primo post.",
-      published: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 2,
-      title: "Secondo Post",
-      slug: "secondo-post",
-      image: "url_dell_immagine",
-      content: "Contenuto del secondo post.",
-      published: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 3,
-      title: "Terzo Post",
-      slug: "terzo-post",
-      image: "url_dell_immagine",
-      content: "Contenuto del terzo post.",
-      published: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 4,
-      title: "Quarto Post",
-      slug: "quarto-post",
-      image: "url_dell_immagine",
-      content: "Contenuto del quarto post.",
-      published: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 5,
-      title: "Quinto Post",
-      slug: "quinto-post",
-      image: "url_dell_immagine",
-      content: "Contenuto del quinto post.",
-      published: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ];
+const photoList = [
+  {
+    id: 1,
+    title: "First photo",
+    slug: "first-photo",
+    image: "image_url",
+    description: "Description of the first photo.",
+    visible: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: 2,
+    title: "Second photo",
+    slug: "second-photo",
+    image: "image_url",
+    description: "Description of the second photo.",
+    visible: false,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: 3,
+    title: "Third photo",
+    slug: "third-photo",
+    image: "image_url",
+    description: "Description of the third photo.",
+    visible: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: 4,
+    title: "Fourth photo",
+    slug: "fourth-photo",
+    image: "image_url",
+    description: "Description of the fourth photo.",
+    visible: false,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  }
+
+];
 
 
-  prisma.post.createMany({
-    data:listaPost,
+  prisma.photo.createMany({
+    data:photosList,
     skipDuplicates: true
 }).then(result => console.log(result))
